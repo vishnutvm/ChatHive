@@ -5,6 +5,7 @@ import http from 'http';
 import morgan from 'morgan';
 import mongoDB from './config/db.js';
 
+import userRouts from './routes/users/users.js';
 // Config
 const app = express();
 const server = http.createServer(app);
@@ -17,7 +18,7 @@ app.use(cors());
 dotenv.config();
 
 //Creating API for user
-// app.use('/api/users', userRoutes);
+app.use('/api/users', userRouts);
 
 const PORT = process.env.PORT || 5000;
 
